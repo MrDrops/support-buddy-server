@@ -1,0 +1,26 @@
+<div>
+    <h1>
+        Support Buddy
+    </h1>
+
+    <% if @current_user.present? %>
+    <h2>
+        Welcome back <%= @current_user.email %>
+    </h2>
+    <% end %>
+    <div>
+        <nav>
+            <%= link_to("Home", root_path) %>
+            <br>
+            <% if @current_user.present? %>
+                <%= link_to("sign out #{ @current_user.email }", login_path, :method=> 'delete') %>
+                <br>
+            <% else %>
+                <%= link_to("Sign up", new_user_path) %>
+                <br>
+                <%= link_to("sign in", login_path) %>
+            <% end %>
+      
+        </nav>
+    </div>
+</div>

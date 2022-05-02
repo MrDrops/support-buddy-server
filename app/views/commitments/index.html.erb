@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>ProgressCommitmentsions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Activity</th>
+      <th>Commit time</th>
+      <th>Completion</th>
+      <th>Journal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @commitments.each do |commitment| %>
+      <tr>
+        <td><%= commitment.user_id %></td>
+        <td><%= commitment.activity_id %></td>
+        <td><%= commitment.commit_time %></td>
+        <td><%= commitment.completion %></td>
+        <td><%= commitment.journal %></td>
+        <td><%= link_to 'Show', commitment %></td>
+        <td><%= link_to 'Edit', edit_commitment_path(commitment) %></td>
+        <td><%= link_to 'Destroy', commitment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New commitment', new_commitment_path %>

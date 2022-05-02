@@ -1,0 +1,48 @@
+<h1>Show activity</h1>
+<p>
+  <strong>Category:</strong>
+  <%= @activity.category %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @activity.action %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @activity.age %>
+</p>
+
+<p>
+  <strong>Mobility:</strong>
+  <%= @activity.mobility %>
+</p>
+
+<p>
+  <strong>Friends:</strong>
+  <%= @activity.friends %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @activity.equipment %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @activity.location %>
+</p>
+
+<p>
+  <strong>time_todo:</strong>
+  <%= @activity.time_todo %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @activity.info %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

@@ -1,0 +1,27 @@
+<p>
+  <strong>User:</strong>
+  <%= @commitment.user_id %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @commitment.activity_id %>
+</p>
+
+<p>
+  <strong>Commit time:</strong>
+  <%= @commitment.commit_time %>
+</p>
+
+<p>
+  <strong>Completion:</strong>
+  <%= @commitment.completion %>
+</p>
+
+<p>
+  <strong>Journal:</strong>
+  <%= @commitment.journal %>
+</p>
+
+<%= link_to 'Edit', edit_commitment_path(@commitment) %> |
+<%= link_to 'Back', commitments_path %>

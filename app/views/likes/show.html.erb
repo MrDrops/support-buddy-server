@@ -1,0 +1,18 @@
+<h1>Show likes</h1>
+<p>
+  <strong>Activity:</strong>
+  <%= @like.activity_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @like.user_id %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @like.like %>
+</p>
+
+<%= link_to 'Edit', edit_like_path(@like) %> |
+<%= link_to 'Back', likes_path %>

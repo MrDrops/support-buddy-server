@@ -1,0 +1,21 @@
+<div>
+    <h1>
+        Log In
+    </h1>
+
+    <div class="form-container-parent">
+        <%= form_tag login_path do %>
+            <div class="form-block">
+                <%= label_tag :email %>
+                <%= email_field_tag :email %>
+                <br>
+                <%= label_tag :password %>
+                <%= password_field_tag :password %>
+                <br>
+            </div>
+            <div class="btn-container">
+                <%= submit_tag "Sign In", :class => "submit-btn" %>
+            </div>
+        <% end %>
+    </div>
+</div>
