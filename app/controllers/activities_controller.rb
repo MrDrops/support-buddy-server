@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
   end
 
   private
-  def commitment_params
+  def activity_params
     params.require(:activity).permit(:category, :activity, :age, :mobility, :friends, :equipment, :location, :time_todo, :info)
   end
 end

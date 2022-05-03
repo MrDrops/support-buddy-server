@@ -12,11 +12,17 @@
         <nav>
             <%= link_to("Home", root_path) %>
             <br>
+            ||
+            <br>
             <% if @current_user.present? %>
                 <%= link_to("sign out #{ @current_user.email }", login_path, :method=> 'delete') %>
                 <br>
+                ||
+                <br>
             <% else %>
                 <%= link_to("Sign up", new_user_path) %>
+                <br>
+                ||
                 <br>
                 <%= link_to("sign in", login_path) %>
             <% end %>

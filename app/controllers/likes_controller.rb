@@ -8,7 +8,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    like = Like.create(commitment_params)
+    like = Like.create(like_params)
     redirect_to(like)
   end
 

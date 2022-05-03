@@ -18,7 +18,7 @@ class CommitmentsController < ApplicationController
 
   def update
     commitment = Commitment.find(params[:id])
-    commitment.update(activity_params)
+    commitment.update(commitment_params)
     redirect_to(commitment)
   end
 
