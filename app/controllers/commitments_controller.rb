@@ -1,6 +1,7 @@
 class CommitmentsController < ApplicationController
   def index
     @commitments = Commitment.all
+    render json: @commitments
   end
 
   def new
@@ -9,7 +10,12 @@ class CommitmentsController < ApplicationController
 
   def create
     commitment = Commitment.create(commitment_params)
-    redirect_to(commitment)
+    #redirect_to(commitment)
+    if activity.save
+      render json: commitment, status: :created
+    else
+      render json: commitment.errors, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,6 +30,7 @@ class CommitmentsController < ApplicationController
 
   def show
     @commitment = Commitment.find(params[:id])
+    render json: @activity
   end
 
   def destroy

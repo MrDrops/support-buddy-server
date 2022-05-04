@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  #mount API::Base, at: "/"
+
   root :to => 'pages#home'
   resources :activities
   resources :commitments

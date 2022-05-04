@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock front to test back-end connections</title>
+</head>
+
+<body>
+    <h1>Support Buddy Activities</h1>
+    <br>
+    <nav>
+        <a href="index.html">Home</a>
+        ||
+        <a href="users.html">Users</a>
+        ||
+        <a href="commitments.html">commitments</a>
+        ||
+        <a href="activities.html">Activities</a>
+        ||
+        <a href="likes.html">Likes</a>
+        ||
+        <a href="get_test.html">get tests</a>
+        ||
+        <a href="log_in.html">log in</a>
+    </nav>
+    <br>
+
+    <main>
+        <div id="activities">
+            <form action="">
+                <label>Category</label>
+                <input type="text" id="category" placeholder="fitness">
+                <br>
+                <label>Activity</label>
+                <input type="text" id="activity" placeholder="soccer">
+                <br>
+                <label>Age</label>
+                <input type="number" id="age" placeholder="1">
+                <br>
+                <label>Mobility</label>
+                <input type="text" id="'mobility" placeholder="full">
+                <br>
+                <label>Friends</label>
+                <input type="number" id="friends" placeholder="3">
+                <br>
+                <label>Equipment</label>
+                <input type="text" id="equipment" placeholder="football">
+                <br>
+                <label>location</label>
+                <input type="text" id="location">
+                <br>
+                <label>Time todo</label>
+                <input type="time" id="time">
+                <br>
+                <label>Info</label>
+                <input type="text" id="info" placeholder="lorem ipsum">
+                <br>
+                <button onclick="addActivity()">Submit</button>
+            </form>
+        </div>
+    </main>    
+</body>

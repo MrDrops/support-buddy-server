@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
+    render json: @activities
   end
 
   def new
@@ -9,7 +10,12 @@ class ActivitiesController < ApplicationController
 
   def create
     activity = Activity.create(activity_params)
-    redirect_to(activity)
+    #redirect_to(activity)
+    if activity.save
+      render json: activity, status: :created
+    else
+      render json: activity.errors, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,6 +30,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    render json: @activity
   end
 
   def destroy

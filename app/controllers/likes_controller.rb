@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   def index
     @likes = Like.all
+    render json: @likes
   end
 
   def new
@@ -9,7 +10,12 @@ class LikesController < ApplicationController
 
   def create
     like = Like.create(like_params)
-    redirect_to(like)
+    #redirect_to(like)
+    if like.save
+      render json: like, status: :created
+    else
+      render json: like.errors, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,6 +30,7 @@ class LikesController < ApplicationController
 
   def show
     @like = Like.find(params[:id])
+    render json: @like
   end
 
   def destroy
