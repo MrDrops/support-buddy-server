@@ -62,14 +62,14 @@ function addCommitment() {
   const user_id = document.getElementById('user_id').value;
   const activity_id = document.getElementById('activity_id').value;
   const commit_time = document.getElementById('commit_time').value;
-  //const completion = document.getElementById('completion').value;
+  const completion = document.getElementById('completion').value;
   const journal = document.getElementById('journal').value;
 
   let data = {
     user_id: user_id,
     activity_id: activity_id,
     commit_time: commit_time,
-    //completion: completion,
+    completion: completion,
     journal: journal
   };
 
@@ -156,13 +156,13 @@ function likeclick() {
   let url = 'http://localhost:3000/likes'
   const activity_id = document.getElementById('activity_id').value;
   const user_id = document.getElementById('user_id').value;
-  const like = document.getElementById('like').value;
+  const liked = document.getElementById('liked').value;
 
 
   let data = {
     activity_id: activity_id,
     user_id: user_id,
-    like: like
+    liked: liked
   };
 
   let reqOptions = {
@@ -177,4 +177,13 @@ function likeclick() {
     //window.location.replace("index.html")
 
   })
+}
+
+async function fetchLikes() {
+  let url = 'http://localhost:3000/likes'
+  let response = await fetch(url)
+  let body = await response.json();
+  //console.log(body);
+  let display = document.getElementById("get-display");
+  display.innerHTML = JSON.stringify(body);
 }
