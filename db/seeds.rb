@@ -18,7 +18,7 @@ p3 = Commitment.create :user_id => 3, :activity_id => 1, :commit_time => DateTim
 puts "#{ Commitment.count } commitments"
 
 Like.destroy_all
-l1 = Like.create :activity_id => 4, :user_id => 1, :like => false
-l1 = Like.create :activity_id => 3, :user_id => 1, :like => false
-l1 = Like.create :activity_id => 2, :user_id => 1, :like => false
+l1 = Like.create :activity_id => 4, :user_id => 1, :liked => false
+l1 = Like.create :activity_id => 3, :user_id => 1, :liked => false
+l1 = Like.create :activity_id => 2, :user_id => 1, :liked => false
 puts "#{ Like.count } likes"
