@@ -1,4 +1,4 @@
-# project2-support-buddy
+# Support Buddy Server
 React Back-end team project
 
 ## Description
